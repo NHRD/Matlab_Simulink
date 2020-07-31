@@ -1,0 +1,52 @@
+RLM Diagnostics at 07/30/2020 16:26 
+
+    RLM version: 12.4BL2
+    RLM platform: x64_w4
+    OS version: 6.2
+
+    ISV name: simobility
+    Hostname: dedenne
+    User: nharada
+    Working directory: C:\Users\nharada\Desktop\matlab_simulink_training
+
+Environment:
+
+        HTTP_PROXY=<not set>
+        RLM_CONNECT_TIMEOUT=<not set>
+        RLM_EXTENDED_ERROR_MESSAGES=<not set>
+        RLM_LICENSE=<not set>
+        RLM_NO_UNLIMIT=<not set>
+        RLM_PATH_RANDOMIZE=<not set>
+        RLM_PROJECT=<not set>
+        RLM_QUEUE=<not set>
+        RLM_ROAM=<not set>
+        RLMSTAT=<not set>
+        simobility_LICENSE=C:\Users\nharada\Documents\OLEA-SKAI3\License\license.lic
+
+    RLM hostid list:
+
+        30e903fa uuid=28A2E41E-A835-11E9-9357-FC6DC1781000 disksn=00523_88_919CC9_AF.9 b025aa300552 00ffd540aadb 94e6f7639a30 96e6f7639a2f 94e6f7639a2f 94e6f7639a33 ip=192.168.11.21 
+
+License files:
+        C:\Users\nharada\Documents\OLEA-SKAI3\License\license.lic
+
+rlm_init() parameters:
+        1: .
+        2: <empty>
+        3: <empty>
+
+Local licenses which can be checked out:
+
+    Client Cached Licenses (only the highest version # shown):
+
+        <none>
+
+
+    In license file C:\Users\nharada\Documents\OLEA-SKAI3\License\license.lic
+          (no server)
+
+        <none>
+
+    Roaming Licenses:
+
+        <none>
