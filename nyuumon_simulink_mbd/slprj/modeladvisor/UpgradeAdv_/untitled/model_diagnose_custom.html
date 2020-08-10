@@ -1,0 +1,606 @@
+<html>  <head>  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Model Advisor Report Customization</title>  
+<style>  
+H3 {font-size:14pt; font-weight:200;}  
+H4 {font-size:9pt; font-weight:normal;}  
+
+</style>  
+</head>  
+<body>  
+<H3 align="center">Model Advisor Customization </H3>  
+
+<p align="right"><a href="matlab: modeladvisor 'help'"><b>Help</b></a></p>
+<table cellpadding=0 cellspacing=0 border=0>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ラピッド アクセラレータの信号のログをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CheckRapidAcceleratorSignalLogging</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Variant Model ブロックを特定し、Model ブロックの選択肢を含む Variant Subsystem に変換</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.ConvertMdlrefVarToVSS</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>CompiledSampleTime ブロックの get_param 呼び出しをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CallsGetParamCompiledSampleTime</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>接続されていないライン、入力端子、出力端子を特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.UnconnectedLinesPorts</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ルート モデルの Inport ブロックの仕様をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.RootInportSpec</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>1 ベースのインデックスを使用するブロックを特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.cgsl_0101</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>コード生成に対するソルバーをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.SolverCodeGen</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>指定したシステム内の問題のあるブロックを特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.QuestionableBlks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>コード生成でサポートされていないブロックがないかチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.codeGenSupport</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>C/C++ 量産組み込み用コードに推奨されないブロックがないかチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.PCGSupport</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル リファレンスの設定の不一致をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.MdlrefConfigMismatch</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>高速化されたモデル参照シミュレーション中に無視された診断設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.ModelRefSIMConfigCompliance</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル参照に使用されているコード生成識別子の書式をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.ModelRefRTWConfigCompliance</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>計算量が多い範囲外のチェック コードを生成する Lookup Table ブロックを特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.LUTRangeCheckCode</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>論理ブロックの出力タイプをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.LogicBlockUseNonBooleanOutput</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ハードウェア実行をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.HWImplementation</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>最適化の設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.OptimizationSettings</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>問題のあるソフトウェア環境仕様を特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.SWEnvironmentSpec</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>問題のあるコード計測 (データ I/O) を特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.CodeInstrumentation</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>参照モデルに対して無視されたパラメーター調整情報をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.ParamTunabilityIgnored</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>暗黙的な信号の関連付けをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.ImplicitSignalResolution</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>最適なバーチャル バスをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.OptBusVirtuality</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>slDataTypeAndScale() の呼び出しをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CallslDataTypeAndScale</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>不確かな初期条件をもつ Discrete-Time Integrator ブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.DiscreteTimeIntegratorInitCondition</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>無効なライブラリ リンクを特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.DisabledLibLinks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>パラメーター付きのライブラリ リンクを特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.ParameterizedLibLinks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>未解決のライブラリ リンクを特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.UnresolvedLibLinks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Variant Subsystem ブロックに変更するための Configurable Subsystem のブロックを特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CSStoVSSConvert</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>関数呼び出し接続の使用をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CheckForProperFcnCallUsage</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>プロモート済みのパラメーターを使用するために、ライブラリでマスク ブロックをチェックし更新</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CheckAndUpdateOldMaskedBuiltinBlocks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>imread() の不要な関数呼び出しを含むマスク イメージ表示コマンドをチェックし更新</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CheckMaskDisplayImageFormat</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>マスクのチェックと更新を行って、マスク ワークスペースに対するアイコン描画コマンドの依存関係を確認</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CheckMaskRunInitFlag</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>非効率なアルゴリズムを生成するブロックを特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.UseRowMajorAlgorithm</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>コード生成の目的に対するモデル コンフィギュレーションをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.CodeGenSanity</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>効率最適化パラメーターをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.checkEnableMemcpy</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>類似のライブラリ クローンを特定、ライブラリ ブロックへのリンクで置き換える</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.CloneDetection.IdentifyStructLibraryClones</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>類似のグラフィカル クローンを特定、ライブラリ ブロックへのリンクで置き換える</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.CloneDetection.IdentifyStructGraphicalClones</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ツールチェーン アプローチを使用して生成コードをビルドするように、モデルをチェックして更新</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.toolchainInfoUpgradeAdvisor.check</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>組み込みターゲット モデルをチェックして ert.tlc システム ターゲット ファイルを使用するように設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.codertarget.check</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデルのシミュレーションの設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckModelSimulationConfiguration</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル診断のデータ有効性の設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckDataValidityDiagnosticsForParameters</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>シミュレーション範囲のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckSimulationRangeChecking</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>明示的な信号の関連付けを検証</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckImplicitSignalResolution</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Simulink I/O で厳密な型指定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckStrongDataTypingWithSimulinkIO</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>サポートされないブロックを検討</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckUnsupportedBlocks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ブロックの最小値と最大値を指定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckSpecifyDesignMinMaxValue</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ロックされたデータ型設定の確認</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckSummarizeLockDownKnownScaling</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>固定小数点ツールに戻り、データ入力とスケーリングを実行</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.launchFPT</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td></td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.hdlssc.ssccodegenadvisor.workflowObjectCheck</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ソルバーのコンフィギュレーションのチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.hdlssc.ssccodegenadvisor.checkSolverConfigurationCheck</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>状態空間パラメーターを取得</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.hdlssc.ssccodegenadvisor.getStateSpaceParametersCheck</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>実装モデルを生成</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.hdlssc.ssccodegenadvisor.generateImplementationModelCheck</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>バリアント変換で使用するシステム定数の特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.MdlTransformer.IdentifyVariantConstant</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>バリアント変換の条件を満たすブロックを特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.MdlTransformer.IdentifyVariantCandidate</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ブロックをバリアントに変換</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.MdlTransformer.VariantTransform</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>手順 1. 削除するデータ ストア ブロックを選択</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.MdlTransformer.DSMElim</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>無限大および連続サンプル時間ソースをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runSampleTimeChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>サポートされていないブロックのチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runBlockSupportChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>MATLAB Function ブロックの設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runMLFcnBlkChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Stateflow チャートの設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runStateflowChartSettingsChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>VHDL ファイルの拡張子をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runFileExtensionChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>命名規則をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runNameConventionChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>最上位サブシステム/端子名をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runToplevelNameChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モジュール/エンティティ名をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runSubsystemNameChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>信号と端子の名前をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runPortSignalNameChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>パッケージ ファイル名をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runPackageNameChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ジェネリックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runGenericChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>クロック、リセット、イネーブル信号をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runClockResetEnableChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>アーキテクチャ名をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runArchitectureNameChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>エンティティとアーキテクチャをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runSplitEntityArchitectureChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>クロック設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runClockChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>安全なモデル パラメーターのチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runModelParamsChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Xilinx デバイスと Altera デバイスのグローバル リセット設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runGlobalResetChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>インライン コンフィギュレーションの設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runInlineConfigurationsChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>可視化設定のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runVisualizationChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>遅延の均衡化の設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runBalanceDelaysChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>出力レイテンシが非ゼロのブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runNFPLatencyChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ULP 誤差が非ゼロのブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runNFPULPErrorChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>無効な最上位サブシステムをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runInvalidDUTChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Enabled Subsystem および Triggered Subsystem の初期条件のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runEnTrigInitConChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>無限大および連続サンプル時間ソースをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runSampleTimeChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>サポートされていないブロックのチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runBlockSupportChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>*FIXME* borrowed_runUnconnectedLinesPorts</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.borrowed_runUnconnectedLinesPorts</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>*FIXME* borrowed_runDisabledLibLinks</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.borrowed_runDisabledLibLinks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>*FIXME* borrowed_runUnresolvedLibLinks</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.borrowed_runUnresolvedLibLinks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>MATLAB Function ブロックの設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runMLFcnBlkChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Stateflow チャートの設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runStateflowChartSettingsChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>*FIXME* borrowed_runReplaceZOHDelayByRTB</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.borrowed_runReplaceZOHDelayByRTB</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>VHDL ファイルの拡張子をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runFileExtensionChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>命名規則をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runNameConventionChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>最上位サブシステム/端子名をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runToplevelNameChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モジュール/エンティティ名をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runSubsystemNameChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>信号と端子の名前をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runPortSignalNameChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>パッケージ ファイル名をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runPackageNameChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ジェネリックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runGenericChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>クロック、リセット、イネーブル信号をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runClockResetEnableChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>アーキテクチャ名をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runArchitectureNameChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>エンティティとアーキテクチャをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runSplitEntityArchitectureChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>クロック設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runClockChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>安全なモデル パラメーターのチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runModelParamsChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>*FIXME* borrowed_runCharacterEncoding</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.borrowed_runCharacterEncoding</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Xilinx デバイスと Altera デバイスのグローバル リセット設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runGlobalResetChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>インライン コンフィギュレーションの設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runInlineConfigurationsChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>可視化設定のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runVisualizationChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>遅延の均衡化の設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runBalanceDelaysChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>出力レイテンシが非ゼロのブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runNFPLatencyChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ULP 誤差が非ゼロのブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runNFPULPErrorChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>無効な最上位サブシステムをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runInvalidDUTChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Enabled Subsystem および Triggered Subsystem の初期条件のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runEnTrigInitConChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ベースラインを作成してパフォーマンスを測定します。ベースラインには、シミュレーションを実行する時間とシミュレーションの結果 (信号ログ) が含まれます。ベースラインを作成するには、ワークスペース内の状態のログを作成するようモデルを設定し、信号を '時間付き構造体' 形式で保存します。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.CreateBaseline</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>[ソルバー データの不整合] などの一部の診断では、シミュレーション中に実行時オーバーヘッドが発生します。シミュレーションの速度を向上させるため、必要ない場合はこれらの診断を無効にしてください。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.IdentifyExpensiveDiagnostics</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>[ブロック削減] などの一部の最適化が無効になっている可能性があります。シミュレーションの速度を向上させるため、これらの最適化設定を有効にしてください。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.IdentifyApplicableOptimizations</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Lookup Table ブロックが不適切に構成されていると、モデルのシミュレーション速度に影響を及ぼす場合があります。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.InefficientLookupTableBlocks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>MATLAB System ブロックのコード生成機能を解析します。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.DetectIntSysObjBlocks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Interpreted MATLAB Function ブロックは使用しないでください。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.DetectIntMATLABFcnBlocks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>[セミコロンなしの式をエコー] などのシミュレーション ターゲット設定を無効にすると、シミュレーション速度を向上させることができます。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.CheckSimTargetEchoStatus</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>[モデル参照] の [リビルド] 設定が適切な値に設定されているかどうかチェックします。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.CheckModelRefRebuildSetting</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>開かれた Scope およびコメントが解除された Scope は、シミュレーションのパフォーマンスに影響を与える可能性があります。このチェックでは、Scope ブロック、Floating Scope ブロックおよびスコープ ビューアーを特定します。スコープ ビューアーはコメント アウトをサポートしません。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.IdentifyScopes</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル上のアクティブな計測の設定を特定します。この設定は、範囲の収集のためにシミュレーション速度の低下を引き起こす可能性があります。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.IdentifyActiveMMO</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデルの S-Function をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.SFuncAnalyzer</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデルおよびローカル ライブラリで SB2SL ブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.simulink.SB2SL.Check</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Check Model dynamics option</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.simscape.performanceadvisor.checkModelDynamics</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Check Noise mode option</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.simscape.performanceadvisor.checkNoiseMode</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Check Parasitic ground conductance</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.simscape.performanceadvisor.checkNeutralParasitic</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Check Resolver parameterization option</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.simscape.performanceadvisor.checkResolver</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Check Simulation mode option</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.simscape.performanceadvisor.checkAveragedMode</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Check Transmission Line blocks</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.simscape.performanceadvisor.checkTransmissionLine</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Check Zero sequence</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.simscape.performanceadvisor.checkZeroSequenceInductance</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Simscape Solver Configuration ブロックの設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.simscape.performanceadvisor.checkSimscapeSolverBlock</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>[流体動的圧縮率] オプションをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.simscape.performanceadvisor.checkFluidDynamicCompressibility</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ブロック パラメーターの単位の整合性をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.simscape.checkParameterUnits</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>旧式の Simscape ブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.simscape.checkOutdatedBlocks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>S-function に対する実行時の診断</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.DiagnosticSFcn</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Data Store ブロックについて読み取り/書き込みの診断が有効であるかどうかをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.DiagnosticDataStoreBlk</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>マルチタスク、厳密な型指定、優先順位の低下などの問題について、Data Store Memory ブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.DataStoreMemoryBlkIssue</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデルが SLX 形式で保存されていることをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.UseSLXFile</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>対象外の文字がないかモデルをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.characterEncoding</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル履歴プロパティをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.SLXModelProperties</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>MaskTabNames パラメーターを使用してマスク ダイアログのタブを指定するマスク ブロックを特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CheckAndUpdateOldMaskTabnames</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>変換の入力パラメーターをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.ModelReferenceAdvisor.InputParameters</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル コンフィギュレーションをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.ModelReferenceAdvisor.ModelConfigurations</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>サブシステムのインターフェイスをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.ModelReferenceAdvisor.SubsystemInterface</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>サブシステムのコンテンツをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.ModelReferenceAdvisor.SubsystemContent</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>変換を完了</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.ModelReferenceAdvisor.CompleteConversion</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>外部のソース管理ツールと交信できる Model Info ブロックの特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.ModelInfoKeywordSubstitution</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>アップグレード アドバイザーを開く</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.UpgradeAdvisor.MAEntryPoint</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>階層内のモデルをアップグレード</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.UpgradeAdvisor.UpgradeModelHierarchy</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ブロックのアップグレードについてモデルをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.Update</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Simulink の現在のバージョンで再保存</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CheckSavedInCurrentVersion</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ターゲット周波数を設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.SetGenericTargetFrequency</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ターゲット周波数を設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.SetTargetFrequency</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>HDL コード生成に対するモデルレベルの設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.CheckGlobalSettings</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>RTL コード生成の基本オプションを設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.SetBasicOptions</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>レポート オプションの設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.SetReportOptions</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>詳細オプションを設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.SetAdvancedOptions</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>最適化オプションを設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.SetOptimizationOptions</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>テスト ベンチ オプションを設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.SetTBOptions</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>生成された RTL コードを HDL Cosimulation テスト ベンチで確認</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.VerifyCosim</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>合成ツール プロジェクトを作成</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.CreateProject</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>指定された FPGA デバイスの論理合成を実行</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.RunLogicSynthesis</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>指定された FPGA デバイスのマッピングを実行</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.RunMapping</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>指定された FPGA デバイスに対して配置および配線を実行</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.RunPandR</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>指定された FPGA デバイスの論理合成を実行</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.RunVivadoSynthesis</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>指定された FPGA デバイスに対して配置および配線を実行</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.RunImplementation</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Simulink モデルに合成結果の注釈を付ける</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.AnnotateModel</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>指定された FPGA デバイスのプログラム ファイルを生成</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.GenerateBitstream</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ターゲット FPGA デバイスをプログラミング</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ProgramDevice</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Simulink Real-Time インターフェイスの生成</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.GeneratexPCInterface</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>FPGA インザループのオプションの設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.FILOption</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>FPGA プログラム ファイルとFPGA インザループのテストベンチ モデルの生成</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.RunFIL</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>USRP(R) ボードの FPGA プログラミング ファイルを生成します。FPGA プロジェクトが最初に生成されます。次に、HDL コードの構文確認が行われます。FPGA プロジェクトの生成および構文確認でエラーが見つからなかった場合、FPGA プログラミング ファイルの生成プロセスが外部コマンド ライン ウィンドウで開始されます。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.RunUSRP</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>組み込みシステム ツールのプロジェクトの作成</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.EmbeddedProject</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>IP コア ドライバー ブロックをもつ、C コード生成用ソフトウェア インターフェイス モデルを生成します。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.EmbeddedModelGen</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>IP コア ドライバー ブロックをもつソフトウェア インターフェイス モデルを生成します。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.EmbeddedCustomModelGen</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>FPGA 上の組み込みシステム用のビットストリームの合成と生成</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.EmbeddedSystemBuild</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ターゲット FPGA デバイスをプログラミング</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.EmbeddedDownload</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>MISRA C:2012 のコンフィギュレーション パラメーターをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.misra.CodeGenSettings</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>MISRA C:2012 で推奨されないブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.misra.BlkSupport</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>サポートされていないブロック名のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.misra.BlockNames</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Assignment ブロックの使用をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.misra.AssignmentBlocks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>default ケースをもたない switch case 式のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.misra.SwitchDefault</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>AUTOSAR 受信側インターフェイス内の欠落しているエラー ポートをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.misra.AutosarReceiverInterface</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>セキュリティで保護されたコーディング標準のコンフィギュレーション パラメーターをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.security.CodeGenSettings</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>セキュリティで保護されたコーディング標準に推奨されないブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.security.BlockSupport</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル参照の境界を越えるバーチャル バスがないかをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CheckVirtualBusAcrossModelReference</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>パラメーターの初期化と調整に関する問題についてモデルをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.ParameterTuning</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>バス信号を使った構造体パラメーターの使用のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.MismatchedBusParams</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル参照の境界を越えるバーチャル バスからの多数の関数の引数がないかをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CheckVirtualBusAcrossModelReferenceArgs</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>問題のあるサブシステムの設定を特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.QuestionableSubsysSetting</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>類似の機能クローンを特定、ライブラリ ブロックへのリンクで置き換える</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.CloneDetection.IdentifyStructFunctionalClones</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ダイアグラムの更新状態をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckUpdateDiagramStatus</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>信号のログを設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckSetupSignalLogging</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>参照データを作成</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckCreateReferenceData</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>boolean データとして論理信号を処理</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckImplementLogicSignalsAsBooleanData</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>信号オブジェクトとブロック間の冗長な仕様を削除をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckAssociateSDOWithBlocks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>入力のデータ型の設定を緩める</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.fpa.CheckRelaxInputDatatypeSettings</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>最適な設定を使用して、参照モデルをもつモデルの並列ビルドができるかどうかをチェックします。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.CheckModelRefParallelBuild</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>大規模な状態をもつ Delay ブロックのシミュレーション速度を向上させるには、リング バッファーを使用します。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.CheckDelayBlockCircularBufferSetting</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>次の条件がすべて存在する場合、シミュレーション速度が遅くなることがあります: (1) モデルが可変ステップ ソルバーを使用している、(2) モデルに連続レートと離散レートの両方が含まれている、および (3) 連続積分に影響しない最速離散レートがソルバーによって決定された [最大ステップ サイズ] より相対的に小さい。'DecoupledContinuousIntegration' パラメーターを 'on' に設定するとシミュレーション速度が向上する場合があります。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.CheckIfNeedDecoupleContDiscRates</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>次の条件がすべて存在する場合、シミュレーション速度が遅くなることがあります: (1) モデルが可変ステップ ソルバーを使用している、(2) ゼロクロッシングと連続状態をもつブロックがモデルに含まれている、(3) 一部のゼロクロッシングが連続積分に影響しない。'MinimalZcImpactIntegration' パラメーターを 'on' に設定するとシミュレーション速度が上がる場合があります。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.CheckIfNeedOptimalSolverResetCausedByZc</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>微分端子を駆動する離散信号をチェックします</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.CheckDiscDriveContSignal</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>陽的なソルバーと陰的なソルバーのどちらを選択するかは、シミュレーション開始時におけるモデル スティッフの近似値によって異なります。モデルでスティッフなシステムを表現している場合、ode15s ソルバーを使用します。それ以外の場合は、ode45 ソルバーを使用します。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.SolverTypeSelection</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>コシミュレーション設定を調整してパフォーマンスと精度を高めます。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.CheckMultiThreadCoSimSetting</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>明示的な数値補償が必要な場合があるコシミュレーション信号を特定。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.CheckNumericCompensationCoSimSetting</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>シミュレーション モードを変更すると、シミュレーション速度が向上する場合があります。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.CheckSimulationModesComparison</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>コンパイラの最適化をオンにして実行すると、シミュレーション速度が向上する場合があります。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.CheckSimulationCompilerOptimization</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>このチェックを使用してモデルの全体的なパフォーマンス改善を検証します。パフォーマンスがベースラインよりも悪い場合、パフォーマンス アドバイザーはすべての変更を破棄し、元のモデルを読み込みます。</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.Simulink.PerformanceAdvisor.FinalValidation</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>HDL コード生成に対するターゲット デバイスおよび合成ツールを設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.SetTargetDevice</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ターゲットのリファレンス設計オプションを設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.SetTargetReferenceDesign</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>HDL コード生成に対するターゲット インターフェイスを設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.SetTargetInterface</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>HDL コード生成に対するターゲット インターフェイスを設定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.SetTargetInterfaceAndMode</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>代数ループのモデルをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.CheckAlgebraicLoop</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>サポートされないブロックのモデルをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.CheckBlockCompatibility</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>グローバルなサンプル時間設定のモデルをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.CheckSampleTime</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>FPGA インザループとのモデル互換性のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.CheckFIL</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>USRP(R) ワークフローとのモデルの互換性をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.CheckUSRP</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>選択されたサブシステムの RTL コードおよびテスト ベンチを生成</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.GenerateHDLCodeAndReport</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>組み込みシステム用の RTL コードと IP コアの生成</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.GenerateIPCore</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>選択したサブシステム用に RTL コードと最上位ラッパーを生成</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.GenerateRTLCode</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>サンプル時間とタスク モードをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.SampleTimesTaskingMode</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>調整可能なパラメーターに制約があるブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.ConstraintsTunableParam</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>レート変換の実行用に Delay ブロック、Unit Delay ブロックおよび Zero-Order Hold ブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.ReplaceZOHDelayByRTB</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ベクトルとして扱われるバス信号のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.BusTreatedAsVector</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>潜在的に遅れる Function-Call ブロックの戻り値をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.DelayedFcnCallSubsys</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>連続サンプル時間と浮動小数点でないデータ型をもつブロックの出力信号を特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.OutputSignalSampleTime</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Merge ブロックの使用をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.MergeBlkUsage</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Outport ブロックの使用をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.InitParamOutportMergeBlk</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Discrete-Time Integrator ブロックの使用をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.DiscreteBlock</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>簡易初期化モードに移行するためのモデル設定をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.ModelLevelMessages</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>行優先のコード生成でサポートされないブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.RowMajorCodeGenSupport</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>配列のレイアウトが未設定の TLC S-Function を特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.RowMajorUnsetSFunction</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>計算量の多い固定小数点および飽和のコードを生成するブロックを特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.BlockSpecificQuestionableFxptOperations</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>スイッチド線形のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.hdlssc.ssccodegenadvisor.checkSwitchedLinearCheck</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>大規模行列演算をチェックします</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runMatrixSizesChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>代数ループをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runAlgebraicLoopChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデルで single のデータ型をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runNFPSuggestionChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ネイティブ浮動小数点を含むモデルで double のデータ型をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runDoubleDatatypeChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>互換性のない設定をもつ Data Type Conversion ブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runNFPDTCChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>HDL Reciprocal ブロックの使用をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runNFPHDLRecipChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Relational Operator ブロックの使用をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runNFPRelopChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ネイティブ浮動小数点でサポートされていないブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelAdvisor.runNFPSupportedBlocksChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>大規模行列演算をチェックします</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runMatrixSizesChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>代数ループをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runAlgebraicLoopChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデルで single のデータ型をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runNFPSuggestionChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ネイティブ浮動小数点を含むモデルで double のデータ型をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runDoubleDatatypeChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>互換性のない設定をもつ Data Type Conversion ブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runNFPDTCChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>HDL Reciprocal ブロックの使用をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runNFPHDLRecipChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>Relational Operator ブロックの使用をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runNFPRelopChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ネイティブ浮動小数点でサポートされていないブロックをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>com.mathworks.HDL.ModelChecker.runNFPSupportedBlocksChecks</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>S-Function のアップグレードの問題がないかモデルをチェックします</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CheckForSFcnUpgradeIssues</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ドライな油圧ノードをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.simscape.checkDryHydraulicNodes</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>微分端子を駆動する連続でない信号をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.NonContSigDerivPort</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデリング エラーに対して Data Store ブロック サンプル時間をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.DataStoreBlkSampleTime</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>データ ストア アクセスに関する順序の問題がないかどうかをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.OrderingDataStoreAccess</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>ブロックへのバーチャル バス入力のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.VirtualBusUsage</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>定数のサンプル時間をもつルートの出力端子をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.CheckConstRootOutportWithInterfaceUpgrade</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル内の単位の不一致を特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.UnitMismatches</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル内の自動単位変換を特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.AutoUnitConversions</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル内の許可されていない単位系を特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.DisallowedUnitSystems</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル内の未定義の単位を特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.UndefinedUnits</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>コンパイル時の情報を必要とするブロックのアップグレードについてモデルをチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.UpdateRequireCompile</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>モデル関数内の欠落している const 修飾子をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.misra.ModelFunctionInterface</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>バス要素の名前として使用されるバス オブジェクト名のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.misra.BusElementNames</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>問題のある固定小数点演算を特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.QuestionableFxptOperations</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>計算量の多い丸めコードを生成するブロックを特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.codegen.ExpensiveSaturationRoundingCode</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>厳密な単精度の設計に対して問題のある演算を特定</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.design.StowawayDoubles</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>符号付き整数のビット演算のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.misra.CompliantCGIRConstructions</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>再帰関数の呼び出しのチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.misra.RecursionCompliance</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>浮動小数点値の等式演算と不等式演算のチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.misra.CompareFloatEquality</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>Title</b></td><td>&#160;&#160;</td><td>整数の語長をチェック</td></tr><tr><td><b>TitleID</b></td><td>&#160;&#160;</td><td>mathworks.misra.IntegerWordLengths</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td height="20"> </td><td> </td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>物理システムのモデル化</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>バスによる信号およびパラメーターのモデル化</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>コード生成の効率性</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>単精度システムのモデル化</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>コード</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>高信頼性システム</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>コード</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>高信頼性システム</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>コード</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>高信頼性システム</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>簡易初期化モードへの移行</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>コード</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>高信頼性システム</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>行優先のコード生成</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>モデル参照</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>ライブラリ リンクとバリアントの管理</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>データ転送の効率性</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>S-Function チェック</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>シミュレーションの精度</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>シミュレーション実行時の精度の診断</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>Data Store Memory ブロックの管理</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>Simulink モデル ファイルの整合性</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>単位の不一致</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>Simulink の現在のバージョンへのアップグレード</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>MISRA C:2012 のモデリング標準</td></tr>
+<tr><td height="20"></td></tr>
+<tr><td><b>タスク名</b></td><td>&#160;&#160;</td><td>セキュリティで保護されたコーディング (CERT C、CWE、ISO/IEC TS 17961) のモデリング標準</td></tr>
+<tr><td height="20"></td></tr>
+</table>
